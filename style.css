@@ -8,11 +8,13 @@
   --green: #10b981;
   --purple: #a855f7;
   --indigo: #6366f1;
+  --teal: #14b8a6;
   --shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
   --neon-blue: 0 0 10px rgba(14, 165, 233, 0.7), 0 0 20px rgba(14, 165, 233, 0.5), 0 0 30px rgba(14, 165, 233, 0.3);
   --neon-red: 0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.5), 0 0 30px rgba(239, 68, 68, 0.3);
   --neon-purple: 0 0 10px rgba(168, 85, 247, 0.7), 0 0 20px rgba(168, 85, 247, 0.5), 0 0 30px rgba(168, 85, 247, 0.3);
   --neon-green: 0 0 10px rgba(16, 185, 129, 0.7), 0 0 20px rgba(16, 185, 129, 0.5), 0 0 30px rgba(16, 185, 129, 0.3);
+  --neon-teal: 0 0 10px rgba(20, 184, 166, 0.7), 0 0 20px rgba(20, 184, 166, 0.5), 0 0 30px rgba(20, 184, 166, 0.3);
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
@@ -212,6 +214,17 @@ body {
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.5);
 }
 
+.btn.teal {
+  background: var(--teal);
+  color: #fff;
+  box-shadow: var(--neon-teal);
+}
+
+.btn.teal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.8), 0 0 30px rgba(20, 184, 166, 0.5);
+}
+
 .btn.small {
   padding: 6px 10px;
   font-size: 13px;
@@ -224,7 +237,6 @@ body {
   position: relative;
   z-index: 10;
 }
-
 
 .hero {
   display: grid;
@@ -380,6 +392,11 @@ body {
   box-shadow: var(--neon-purple);
 }
 
+.track-swatch.teal {
+  background: linear-gradient(90deg, #0f766e, #14b8a6);
+  box-shadow: var(--neon-teal);
+}
+
 .track-body {
   padding: 12px;
 }
@@ -427,6 +444,11 @@ body {
   box-shadow: var(--neon-red);
 }
 
+.teal-panel {
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.1), rgba(16, 16, 32, 0.8));
+  box-shadow: var(--neon-teal);
+}
+
 .list {
   margin: 12px 0 18px;
   padding: 0;
@@ -467,34 +489,6 @@ body {
 
 .resource:hover {
   transform: translateY(-5px);
-}
-/*      section*/
-.track-section {
-  margin: 40px auto;
-  padding: 40px 50px;
-  width: 100%;
-  max-width: 1000px;
-
-  background: rgba(255, 255, 255, 0.12); 
-  backdrop-filter: blur(6px);
-
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
-
-  text-align: left;
-}
-
-.track-section h2 {
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.track-section p.muted {
-  font-size: 17px;
-  color: #f6f6f6;
-  max-width: 800px;
 }
 
 .cards {
@@ -546,9 +540,10 @@ body {
   }
   .split {
     grid-template-columns: 1fr 1fr;
-  } 
+  }
 }
 
+/* Page-specific background animations */
 body.cyber-page .background-animation {
   background: linear-gradient(45deg, #0f172a, #1e3a8a, #312e81);
   animation: gradientShift 10s ease infinite;
@@ -562,6 +557,11 @@ body.web-page .background-animation {
 body.data-page .background-animation {
   background: linear-gradient(45deg, #0f172a, #065f46, #059669);
   animation: gradientShift 14s ease infinite;
+}
+
+body.flutter-page .background-animation {
+  background: linear-gradient(45deg, #0f172a, #0f766e, #14b8a6);
+  animation: gradientShift 16s ease infinite;
 }
 
 /* 3D Card Flip Animation */
@@ -610,22 +610,62 @@ body.data-page .background-animation {
   transform: rotateY(180deg);
   box-shadow: var(--neon-purple);
 }
-/*      section*/
 
-.header-section {
-    padding: 30px 50px;
+/* Track section */
+.track-section {
+  margin: 40px auto;
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+  text-align: left;
 }
 
+.track-section h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
 
+.track-section p.muted {
+  font-size: 17px;
+  color: #f6f6f6;
+  max-width: 800px;
+}
+
+/* Header section */
+.header-section {
+  padding: 30px 50px;
+  text-align: center;
+}
+
+.header-section h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-section p {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* Steps timeline */
 .steps {
   width: 80%;
   margin: auto;
   position: relative;
   margin-left: 40px;
-    z-index: 1;
+  z-index: 1;
 }
 
-.steps::before { 
+.steps::before {
   content: "";
   position: absolute;
   left: 45px;
@@ -636,91 +676,7 @@ body.data-page .background-animation {
   border-radius: 2px;
   z-index: 0;
 }
-.step::after {
-    content: "";
-    position: absolute;
-    right: 20px;   
-    top: 50%;
-    transform: translateY(-50%);
-    
-    width: 0;
-    height: 0px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 8px solid #ffffff; 
-}
 
-.step {
-  background: var(--card);
-  padding: 20px;
-  margin: 25px 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  position: relative;
-}
-
-.step .number {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid #D1D5DC;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.step h3 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.step p {
-  margin-top: 5px;
-  color: gray;
-}
-.step-btn{
-    display: inline-block;
-    background: var(--accent);
-    padding: 10px;
-    border-radius: 8px;
-   margin-top: 15px;
-  color: #fff;
-   font-size: 14;
-     transition: 0.2s ease;
-text-decoration: none;
- font-weight: 600;
-}
-.step-btn:hover {
-  background: #a874ff;
-  transform: translateY(-2px);
-}
-/* Data Analysis specific background */
-body.data-page .background-animation {
-  background: linear-gradient(45deg, #0f172a, #065f46, #059669);
-  animation: gradientShift 14s ease infinite;
-}
-
-/* Step button colors for different tracks */
-.data-page .step-btn {
-  background: var(--green);
-}
-
-.data-page .step-btn:hover {
-  background: #34d399;
-  transform: translateY(-2px);
-}
-
-/* Resource card hover effects for data page */
-.data-page .resource:hover {
-  box-shadow: var(--neon-green);
-}
-
-/* Enhanced step styling for all roadmap pages */
 .step {
   background: var(--card);
   padding: 25px;
@@ -738,6 +694,19 @@ body.data-page .background-animation {
 .step:hover {
   transform: translateX(10px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.step::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #ffffff;
 }
 
 /* Different border colors for different tracks */
@@ -808,53 +777,29 @@ body.data-page .background-animation {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-/* Track section enhancements */
-.track-section {
-  margin: 40px auto;
-  padding: 40px 50px;
-  width: 100%;
-  max-width: 1000px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Track-specific step button colors */
+.data-page .step-btn {
+  background: var(--green);
 }
 
-.track-section h2 {
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, #6366f1, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.data-page .step-btn:hover {
+  background: #34d399;
 }
 
-.track-section p.muted {
-  font-size: 17px;
-  color: #d1d5db;
-  max-width: 800px;
-  line-height: 1.6;
+.web-page .step-btn {
+  background: var(--purple);
 }
 
-/* Header section */
-.header-section {
-  padding: 40px 0 20px 0;
-  text-align: center;
+.web-page .step-btn:hover {
+  background: #a855f7;
 }
 
-.header-section h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #6366f1, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.flutter-page .step-btn {
+  background: var(--teal);
 }
 
-.header-section p {
-  font-size: 18px;
-  color: var(--muted);
+.flutter-page .step-btn:hover {
+  background: #14b8a6;
 }
 
 /* Resources section */
@@ -902,4 +847,229 @@ body.data-page .background-animation {
   font-size: 14px;
   color: var(--muted);
   line-height: 1.4;
+}
+
+/* Cyber page specific enhancements */
+.cyber-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.blue-hover {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.2));
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.red-hover {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.2));
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.panel {
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.blue-panel:hover .blue-hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.red-panel:hover .red-hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.blue-panel:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2), var(--neon-blue);
+}
+
+.red-panel:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2), var(--neon-red);
+}
+
+/* Enhanced list item hover effects */
+.blue-panel .list li {
+  transition: all 0.3s ease;
+  border-left: 0px solid transparent;
+}
+
+.red-panel .list li {
+  transition: all 0.3s ease;
+  border-left: 0px solid transparent;
+}
+
+.blue-panel .list li:hover {
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.15), rgba(59, 130, 246, 0.1));
+  border-left: 4px solid var(--blue);
+  transform: translateX(10px) scale(1.02);
+}
+
+.red-panel .list li:hover {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.1));
+  border-left: 4px solid var(--red);
+  transform: translateX(10px) scale(1.02);
+}
+
+/* Button enhancement */
+.blue-panel .btn.primary {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.red-panel .btn.red {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.blue-panel .btn.primary:hover {
+  background: var(--blue);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.red-panel .btn.red:hover {
+  background: var(--red);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Ripple effect for buttons */
+.btn.primary::after, .btn.red::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn.primary:hover::after, .btn.red:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Panel header glow effect */
+.panel h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.blue-panel h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--blue);
+  transition: width 0.3s ease;
+}
+
+.red-panel h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+.blue-panel:hover h2::after {
+  width: 100%;
+}
+
+.red-panel:hover h2::after {
+  width: 100%;
+}
+
+/* Floating animation for panels */
+@keyframes float-blue {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-red {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.blue-panel {
+  animation: float-blue 6s ease-in-out infinite;
+}
+
+.red-panel {
+  animation: float-red 6s ease-in-out infinite 1.5s;
+}
+
+/* Pulse effect for buttons */
+@keyframes pulse-blue {
+  0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.blue-panel .btn.primary {
+  animation: pulse-blue 2s infinite;
+}
+
+.red-panel .btn.red {
+  animation: pulse-red 2s infinite;
+}
+
+/* Enhanced resource cards */
+.resource:nth-child(1):hover {
+  box-shadow: var(--neon-blue);
+}
+
+.resource:nth-child(2):hover {
+  box-shadow: var(--neon-purple);
+}
+
+.resource:nth-child(3):hover {
+  box-shadow: var(--neon-red);
 }
