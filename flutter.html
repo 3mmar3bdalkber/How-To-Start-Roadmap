@@ -1,119 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elzatona — Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="home-page">
+    <div class="background-animation"></div>
+    <div class="particles" id="particles"></div>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elzatona — Web Development</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <header class="site-header">
+      <div class="brand">AZ</div>
+      <div class="title">Elzatona</div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="cyber.html">Cyber</a>
+        <a href="web.html">Web Dev</a>
+        <a href="dataanalysis.html">Data</a>
+        <a href="flutter.html">Flutter</a>
+        <a class="btn primary" href="#tracks">Get Started</a>
+      </nav>
+    </header>
 
-<body class="web-page">
-  <div class="background-animation"></div>
-  <div class="particles" id="particles"></div>
-
-  <header class="site-header">
-    <div class="brand">LP</div>
-    <div class="title">Elzatona</div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="cyber.html">Cyber</a>
-      <a href="web.html">Web Dev</a>
-      <a href="dataanalysis.html">Data</a>
-      <a href="flutter.html" class="active">Flutter</a>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section class="track-section">
-      <h2>Web Development Roadmap</h2>
-
-      <p class="muted">
-        Follow this roadmap to become a fullstack web developer. Start from
-        the basics of HTML and CSS, progress to JavaScript and frontend
-        frameworks, then learn backend technologies and databases to build
-        complete web applications.
-      </p>
-    </section>
-
-    <section class="header-section">
-      <h1>Learning Path</h1>
-      <p>Follow these steps to master this track.</p>
-    </section>
-
-    <div class="steps">
-      <div class="step">
-        <div class="number">1</div>
-        <div class="content">
-          <h3>HTML</h3>
-          <p>Learn structure.</p>
-          <a class="step-btn" href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji"
-            target="_blank">
-            Watch Playlist
-          </a>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">2</div>
-        <div class="content">
-          <h3>CSS</h3>
-          <p>Styling, and responsive design.</p>
-          <a class="step-btn" href="https://www.youtube.com/watch?v=X1ulCwyhCVM&list=PLDoPjvoNmBAzjsz06gkzlSrlev53MGIKe"
-            target="_blank">
-            Watch Playlist
-          </a>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">3</div>
-        <div class="content">
-          <h3>JavaScript Basics</h3>
-          <p>Variables, functions, loops, DOM manipulation, and events.</p>
-          <a class="step-btn" href="https://www.youtube.com/watch?v=PWuTLTFMtYw&list=PLknwEmKsW8OuTqUDaFRBiAViDZ5uI3VcE"
-            target="_blank">
-            Watch Playlist
-          </a>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">4</div>
-        <div class="content">
-          <h3>Frontend Frameworks</h3>
+    <main class="container">
+      <section class="hero">
+        <div class="hero-left">
+          <h1>
+            Start your career in <span class="accent">Cybersecurity</span>, Web
+            Dev, Flutter or Data Analysis
+          </h1>
           <p>
-            Learn React, Vue, or Angular to build dynamic user interfaces.
+            Curated learning paths, hands-on labs, and real-world projects.
+            Click any track below to dive in — Cyber is split into Blue Team and
+            Red Team on the same page.
           </p>
-          <a class="step-btn"
-            href="https://www.easylearn.ing/course/learn-react-typescript-redux?utm_source=chatgpt.com" target="_blank">
-            Watch Playlist
+          <div class="cta">
+            <a class="btn primary" href="#tracks">Browse Tracks</a>
+            <a class="btn" href="#about">How it works</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="small">Avg Completion</div>
+              <div class="big">3 - 6 months</div>
+            </div>
+            <div class="stat">
+              <div class="small">Hands-on labs</div>
+              <div class="big">200+</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>Interactive Labs</h3>
+                <p>Browser-based sandboxes and step-by-step tasks.</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>Featured Path</h3>
+                <p>Cybersecurity - Foundations</p>
+                <a
+                  class="btn primary small"
+                  href="cyber.html"
+                  style="margin-top: 10px"
+                  >Start</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tracks" class="tracks">
+        <h2>Tracks</h2>
+        <p class="muted">
+          Choose a path and begin with starter modules or jump directly to
+          advanced labs.
+        </p>
+        <div class="track-grid">
+          <a class="track" href="cyber.html">
+            <div class="track-swatch blue">Cybersecurity</div>
+            <div class="track-body">Blue Team & Red Team</div>
+          </a>
+          <a class="track" href="web.html">
+            <div class="track-swatch purple">Web Dev</div>
+            <div class="track-body">Frontend & Backend</div>
+          </a>
+          <a class="track" href="dataanalysis.html">
+            <div class="track-swatch green">Data Analysis</div>
+            <div class="track-body">Python & Visualization</div>
+          </a>
+          <a class="track" href="flutter.html">
+            <div class="track-swatch teal">Flutter</div>
+            <div class="track-body">Mobile with Dart</div>
           </a>
         </div>
-      </div>
+      </section>
 
-      <div class="step">
-        <div class="number">5</div>
-        <div class="content">
-          <h3>Backend Basics</h3>
-          <p>Node.js, Express, REST APIs, databases (SQL & NoSQL).</p>
-          <a class="step-btn" href="https://www.youtube.com/watch?v=Bzzp0q0T5oM&list=PLQtNtS-WfRa8OF9juY3k6WUWayMfDKHK2"
-            target="_blank">
-            Watch Playlist
-          </a>
+      <footer class="site-footer">
+        <div>© Elzatona • Built for learning</div>
+        <div class="foot-links">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
         </div>
-      </div>
+      </footer>
+    </main>
 
-      <div class="step">
-        <div class="number">6</div>
-        <div class="content">
-          <h3>Fullstack Projects</h3>
-          <p>Combine frontend and backend in real-world projects.</p>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script src="ja.js"></script>
-</body>
-
+    <script src="ja.js"></script>
+  </body>
 </html>
