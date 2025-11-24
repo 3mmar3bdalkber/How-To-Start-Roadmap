@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elzatona — Cybersecurity</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Smart hover effects for cyber page - Pure CSS */
+    .cyber-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      opacity: 0;
+      transition: all 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .blue-hover {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.2));
+      box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+
+    .red-hover {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.2));
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .panel {
+      position: relative;
+      z-index: 2;
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    .blue-panel:hover .blue-hover {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+
+    .red-panel:hover .red-hover {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+
+    .blue-panel:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2), var(--neon-blue);
+    }
+
+    .red-panel:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2), var(--neon-red);
+    }
+
+    /* Enhanced list item hover effects */
+    .blue-panel .list li {
+      transition: all 0.3s ease;
+      border-left: 0px solid transparent;
+    }
+
+    .red-panel .list li {
+      transition: all 0.3s ease;
+      border-left: 0px solid transparent;
+    }
+
+    .blue-panel .list li:hover {
+      background: linear-gradient(90deg, rgba(14, 165, 233, 0.15), rgba(59, 130, 246, 0.1));
+      border-left: 4px solid var(--blue);
+      transform: translateX(10px) scale(1.02);
+    }
+
+    .red-panel .list li:hover {
+      background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.1));
+      border-left: 4px solid var(--red);
+      transform: translateX(10px) scale(1.02);
+    }
+
+    /* Button enhancement */
+    .blue-panel .btn.primary {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .red-panel .btn.red {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blue-panel .btn.primary:hover {
+      background: var(--blue);
+      box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .red-panel .btn.red:hover {
+      background: var(--red);
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    /* Ripple effect for buttons */
+    .btn.primary::after, .btn.red::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+
+    .btn.primary:hover::after, .btn.red:hover::after {
+      animation: ripple 1s ease-out;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(20, 20);
+        opacity: 0;
+      }
+    }
+
+    /* Panel header glow effect */
+    .panel h2 {
+      position: relative;
+      display: inline-block;
+    }
+
+    .blue-panel h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--blue);
+      transition: width 0.3s ease;
+    }
+
+    .red-panel h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: width 0.3s ease;
+    }
+
+    .blue-panel:hover h2::after {
+      width: 100%;
+    }
+
+    .red-panel:hover h2::after {
+      width: 100%;
+    }
+
+    /* Floating animation for panels */
+    @keyframes float-blue {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes float-red {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .blue-panel {
+      animation: float-blue 6s ease-in-out infinite;
+    }
+
+    .red-panel {
+      animation: float-red 6s ease-in-out infinite 1.5s;
+    }
+
+    /* Pulse effect for buttons */
+    @keyframes pulse-blue {
+      0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+    }
+
+    @keyframes pulse-red {
+      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    .blue-panel .btn.primary {
+      animation: pulse-blue 2s infinite;
+    }
+
+    .red-panel .btn.red {
+      animation: pulse-red 2s infinite;
+    }
+
+    /* Enhanced resource cards */
+    .resource {
+      transition: all 0.3s ease;
+    }
+
+    .resource:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .resource:nth-child(1):hover {
+      box-shadow: var(--neon-blue);
+    }
+
+    .resource:nth-child(2):hover {
+      box-shadow: var(--neon-purple);
+    }
+
+    .resource:nth-child(3):hover {
+      box-shadow: var(--neon-red);
+    }
+  </style>
+</head>
+<body class="cyber-page">
+  <div class="background-animation"></div>
+  <div class="particles" id="particles"></div>
+
+  <header class="site-header">
+    <div class="brand">LP</div>
+    <div class="title">Elzatona</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="cyber.html" class="active">Cyber</a>
+      <!-- <a href="blue-team.html">Blue Team</a>
+      <a href="red-team.html">Red Team</a> -->
+      <a href="web.html">Web Dev</a>
+      <a href="dataanalysis.html">Data</a>
+      <a href="flutter.html">Flutter</a>
+    </nav>
+  </header>
+
+  <main class="container cyber-container">
+    <section class="split">
+      <!-- Blue Team Panel -->
+      <div class="panel blue-panel">
+        <div class="hover-overlay blue-hover"></div>
+        <h2> Blue Team</h2>
+        <br>
+        <br>
+        <p>Detection, response, and defense: SIEM, EDR, threat hunting, and incident response.</p>
+
+        <ul class="list">
+          <li>
+            <div>
+              <strong>SIEM & Log Analysis</strong>
+              <div class="muted">SPL / KQL, dashboards, use cases</div>
+            </div>
+            <a class="btn" href="blue-team.html">View Roadmap</a>
+          </li>
+          <li>
+            <div>
+              <strong>Endpoint Detection</strong>
+              <div class="muted">EDR, hunting, YARA</div>
+            </div>
+            <a class="btn" href="blue-team.html">View Roadmap</a>
+          </li>
+          <li>
+            <div>
+              <strong>Incident Response</strong>
+              <div class="muted">Triage, memory & disk forensics</div>
+            </div>
+            <a class="btn" href="blue-team.html">View Roadmap</a>
+          </li>
+        </ul>
+
+        <a class="btn primary" href="blue-team.html">Start Blue Team Path</a>
+      </div>
+
+      <!-- Red Team Panel -->
+      <div class="panel red-panel">
+        <div class="hover-overlay red-hover"></div>
+        <h2> Red Team</h2>
+        <br>
+        <br>
+        <p>Offensive techniques: pentesting, AD, exploitation, and post-exploitation.</p>
+
+        <ul class="list">
+          <li>
+            <div>
+              <strong>Web App Exploits</strong>
+              <div class="muted">XSS, SQLi, SSRF, Burp practice</div>
+            </div>
+            <a class="btn" href="red-team.html">View Roadmap</a>
+          </li>
+          <li>
+            <div>
+              <strong>AD & Lateral Movement</strong>
+              <div class="muted">Kerberoast, Pass-the-Hash, BloodHound</div>
+            </div>
+            <a class="btn" href="red-team.html">View Roadmap</a>
+          </li>
+          <li>
+            <div>
+              <strong>Post-Exploitation</strong>
+              <div class="muted">Mimikatz, persistence</div>
+            </div>
+            <a class="btn" href="red-team.html">View Roadmap</a>
+          </li>
+        </ul>
+
+        <a class="btn red" href="red-team.html">Start Red Team Path</a>
+      </div>
+    </section>
+
+    <section class="resources">
+      <br>
+      <h3>Labs & Resources</h3>
+      <br>
+      <div class="resource-grid">
+        <div class="resource">
+          <div class="res-title">SIEM Lab</div>
+          <div class="res-desc">Hands-on Splunk / ELK exercises</div>
+        </div>
+        <div class="resource">
+          <div class="res-title">Forensics</div>
+          <div class="res-desc">Memory & disk analysis tasks</div>
+        </div>
+        <div class="resource">
+          <div class="res-title">AD Attack Lab</div>
+          <div class="res-desc">Simulated domain to practice attacks and defenses</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
