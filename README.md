@@ -37,7 +37,7 @@
 
 ---
 
-## 🎬 Live Demo
+##  Live Demo
 
 https://3mmar3bdalkber.github.io/How-To-Start-Roadmap/index.html
 
@@ -57,10 +57,10 @@ https://3mmar3bdalkber.github.io/How-To-Start-Roadmap/index.html
 
 ```bash
 How-To-Start-Roadmap/
-├─ basic.html              # Main interactive page
-├─ assets/                 # Images, GIFs, icons, animations
-├─ css/                    # Stylesheets
-├─ js/                     # JavaScript files
+├─ basic.html              
+├─ assets/                 
+├─ css/                    
+├─ js/                    
 └─ README.md
 ```
 ---
@@ -99,7 +99,7 @@ Mobile apps, state management, UI
 
 Python, Pandas, NumPy, visualization
 
-## 👥 Contributors
+##  Contributors
 
 **Team Name** : **El ZATONA**
 
