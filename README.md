@@ -37,7 +37,7 @@
 
 ---
 
-##  Live Demo
+## Live Demo
 
 https://3mmar3bdalkber.github.io/How-To-Start-Roadmap/index.html
 
@@ -58,7 +58,7 @@ https://3mmar3bdalkber.github.io/How-To-Start-Roadmap/index.html
 ```bash
 How-To-Start-Roadmap/
 ├─ basic.html              
-├─ assets/                 
+├─ assets               
 ├─ css/                    
 ├─ js/                    
 └─ README.md
