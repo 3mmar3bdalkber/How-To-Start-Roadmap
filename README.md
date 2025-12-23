@@ -1,99 +1,105 @@
-# Maze Adventure Game
+How-To-Start-Roadmap
+A modern, interactive roadmap to kickstart your journey in Cybersecurity, Web Development, Flutter, and Data Analysis.
+Learn tracks step-by-step with separate Blue Team and Red Team sections for Cybersecurity.
 
-Maze Adventure Game is a desktop game built using **Java Swing** as a practical
-project for the **Object-Oriented Programming (OOP)** course.
-The game generates a random maze, allows the player to move inside it,
-tracks time and score, and provides automatic maze solving using DFS.
+Cybersecurity Red Team HTML5 CSS3 JavaScript Flutter Python License
 
----
+Demo • Quickstart • Roadmap • Contributors
 
-## Overview
+Highlight Reel
+Interactive roadmap for multiple learning tracks.
+Blue Team & Red Team sections for Cybersecurity.
+Frontend & Backend guidance for Web Development.
+Flutter mobile apps guidance.
+Data Analysis projects using Python.
+Clean UI with animations and buttons linking to resources.
+Live Demo
+https://3mmar3bdalkber.github.io/How-To-Start-Roadmap/index.html
 
-This project demonstrates the application of core OOP concepts combined with
-basic algorithms and GUI programming.
-The player navigates through a randomly generated maze and tries to reach
-the exit before the score runs out.
-
-The project focuses on clean code structure, separation of responsibilities,
-and event-driven programming.
-
----
-
-## Highlight Reel
-
-- Random maze generation using DFS
-- Player movement with collision detection
-- Smooth player animation using Timer
-- Maze solving using DFS and backtracking
-- Timer and score system
-- Multiple difficulty levels (Easy, Medium, Hard)
-- Sound effects for actions (move, win, lose, error)
-- Custom dialogs for win, loss, and confirmations
-- Clear game state management
-
----
-
-## Gameplay
-
-- Use the **arrow keys** to move the player inside the maze
-- Avoid walls and find the correct path
-- Reach the exit to win the game
-- The score decreases over time
-- You can restart the game or change difficulty levels at any time
-- You can let the algorithm solve the maze automatically
-
----
-
-## Algorithms Used
-
-### Depth First Search (DFS)
-
-- Used to generate random mazes
-- Used again to solve the maze
-- Implemented using a stack and backtracking
-
-DFS ensures that the maze is fully connected and that a valid path exists
-between the start and the exit.
-
----
-
-## OOP Concepts Applied
-
-- **Encapsulation**
-  - Player data, score, and timer are kept private and controlled by methods
-- **Abstraction**
-  - Maze generation and maze solving logic are separated into different classes
-- **Inheritance**
-  - Custom UI components extend `JPanel`
-- **Polymorphism**
-  - Event handling using listeners and interfaces
-- **Interfaces**
-  - Custom `GameOverListener` to handle game-over events
-- **Separation of Concerns**
-  - UI, game logic, and models are clearly separated
-
----
-
-## Project Structure
-
-```bash
-Maze-Adventure/
-├─ Main.java                # Application entry point
-├─ MazePanel.java           # Core game logic and rendering
-├─ MazeGenerator.java       # Maze generation using DFS
-├─ MazeSolver.java          # Maze solving using DFS
-├─ RightSidePanel.java      # Timer, score, and level display
-├─ navPanel.java            # Top navigation bar
-├─ GameState.java           # Enum for game states
-├─ GameOverListener.java    # Custom event interface
-├─ SoundManager.java        # Sound handling
-├─ Sound.java               # Sound enum
-├─ CustomMessage.java       # Custom dialogs
-├─ AppColors.java           # Centralized colors
-├─ model/
-│   ├─ Player.java          # Player logic and animation
-│   └─ Level.java           # Level configuration
-├─ resources/
-│   ├─ sounds/
-│   └─ icons/
+Tech Stack
+Frontend: HTML, CSS, JavaScript
+Backend guidance: Node.js, Laravel (resources only)
+Mobile: Flutter
+Data Analysis: Python, Pandas, NumPy
+Tools: Git, GitHub, VS Code
+Project Structure
+How-To-Start-Roadmap/
+├─ basic.html              
+├─ assets               
+├─ css/                    
+├─ js/                    
 └─ README.md
+Quickstart
+# 1) Clone
+git clone https://github.com/Ammar-Abdalkber/How-To-Start-Roadmap.git
+cd How-To-Start-Roadmap
+
+# 2) Open in browser
+# - Open basic.html directly for live demo
+# - Or host with GitHub Pages
+Roadmap
+Cybersecurity
+
+Blue Team: Defensive strategies, monitoring, SIEM basics
+
+Red Team: Penetration testing, ethical hacking
+
+Web Development
+
+Frontend: HTML, CSS, JavaScript, React basics
+
+Backend: Node.js/Laravel guidance
+
+Flutter Development
+
+Mobile apps, state management, UI
+
+Data Analysis
+
+Python, Pandas, NumPy, visualization
+
+Contributors
+Team Name : El ZATONA
+
+Ammar Abdalkber
+
+Ahmed Rabee
+
+Taha Sabry
+
+About
+Website teaches you how to start your journey in cybersecurity, web development, and data analysis with structured roadmaps and hands-on labs. Master in-demand skills through interactive learning paths designed for career success
+
+Resources
+ Readme
+ Activity
+Stars
+ 1 star
+Watchers
+ 0 watching
+Forks
+ 0 forks
+Report repository
+Releases
+No releases published
+Create a new release
+Packages
+No packages published
+Publish your first package
+Deployments
+25
+ github-pages 2 weeks ago
++ 24 deployments
+Languages
+HTML
+72.0%
+ 
+CSS
+23.3%
+ 
+JavaScript
+4.7%
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+Term
