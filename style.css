@@ -1,4 +1,4 @@
-/* الالوان المستخدمه يعم في المشروع اهي */
+/* الالوان المستخدمه اهي */
 :root {
   --bg: #0a0a12;
   --card: #0f0f1a;
@@ -8,7 +8,6 @@
   --red: #ef4444;
   --green: #10b981;
   --purple: #a855f7;
-  --indigo: #6366f1;
   --teal: #14b8a6;
   /* Styles Shadow */
   --shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
@@ -16,7 +15,6 @@
   --neon-red: 0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.5), 0 0 30px rgba(239, 68, 68, 0.3);
   --neon-purple: 0 0 10px rgba(168, 85, 247, 0.7), 0 0 20px rgba(168, 85, 247, 0.5), 0 0 30px rgba(168, 85, 247, 0.3);
   --neon-green: 0 0 10px rgba(16, 185, 129, 0.7), 0 0 20px rgba(16, 185, 129, 0.5), 0 0 30px rgba(16, 185, 129, 0.3);
-  --neon-teal: 0 0 10px rgba(20, 184, 166, 0.7), 0 0 20px rgba(20, 184, 166, 0.5), 0 0 30px rgba(20, 184, 166, 0.3);
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
@@ -31,65 +29,20 @@ body {
   background: var(--bg);
   color: #f1f5f9;
   min-height: 100vh;
-  overflow-x: hidden;
   position: relative;
 }
-
 /* --------------------------------------------------- */
-/* points in Back النقط يعم*/
-.particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.particle {
-  position: absolute;
-  background: rgba(99, 102, 241, 0.3);
-  border-radius: 50%;
-  animation: float 15s infinite linear;
-}
-
-/* طريقة حركتهم */
-@keyframes float {
-  0% {
-    transform: translateY(0) translateX(0);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(-100vh) translateX(100px);
-    opacity: 0;
-  }
-}
-
-/* --------------------------------------------------- */
-
 /* تنظيم مكان ال 
 nav 
 */
 .site-header {
   display: flex;
-  /*للمكان على جنب */
   align-items: center;
   gap: 16px;
   padding: 18px 28px;
   background: rgba(10, 10, 18, 0.8);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(99, 102, 241, 0.2);
   position: relative;
-  z-index: 100;
 }
 
 /* AZ icon */
@@ -104,7 +57,6 @@ nav
   justify-content: center;
   font-weight: 700;
   box-shadow: var(--neon-purple);
-  /* animation */
   animation: ani 4s infinite;
 }
 
@@ -114,12 +66,10 @@ nav
   0% {
     transform: scale(1);
   }
-
   /* MID */
   50% {
     transform: scale(1.3);
   }
-
   /* END, Back again */
   100% {
     transform: scale(1);
@@ -131,7 +81,7 @@ nav
 /*  REALLY WE ARE HTS TEAM WITHOUT GPT,MARO,TAHA,AHMED */
 
 /* EL ZATONA  logo Word*/
-.title {
+.title ,.accent{
   font-weight: 700;
   font-size: 1.6rem;
   /* to combine two colors */
@@ -141,6 +91,9 @@ nav
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+.accent{
+  font-size: 3rem;
 }
 
 /* --------------------------------------------------- */
@@ -153,10 +106,8 @@ a {
 
 /* nav bar */
 .nav {
-  /* TO MAKE IN LEFT */
   margin-left: auto;
   display: flex;
-  /* Gap between buttons */
   gap: 12px;
   align-items: center;
 }
@@ -188,24 +139,12 @@ a {
 
 /* حتة ال
 ACTIVE
-for same Page */
+for Now Page */
 .nav a.active {
   background: rgba(99, 102, 241, 0.2);
   box-shadow: var(--neon-purple);
 }
 
-/* كلمة سايبر مميزة من الاسبان */
-.accent {
-  font-weight: 700;
-  font-size: 3rem;
-  /* to combine two colors */
-  background: linear-gradient(90deg, #6366f1, #ec4899);
-  /* clip 
-    لاظهار النص . هي حاليا جسم ملون*/
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
-}
 
 /* Buttons */
 .btn {
@@ -218,10 +157,7 @@ for same Page */
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  /* to get Hover Flow on just button */
   position: relative;
-
-
   overflow: hidden;
   color: white;
 }
@@ -291,7 +227,6 @@ for same Page */
   padding: 16px;
   border-radius: 10px;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(99, 102, 241, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -316,10 +251,8 @@ for same Page */
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(99, 102, 241, 0.2);
   transform-style: preserve-3d;
-  perspective: 1000px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -362,9 +295,7 @@ for same Page */
   position: absolute;
   width: 100%;
   height: 100%;
-  /* Visibilty To Hide */
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   border-radius: 12px;
   padding: 20px;
   display: flex;
@@ -396,7 +327,7 @@ for same Page */
 /* Rabea Css */
 .tracks {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
   padding: 20px;
   max-width: 1200px;
@@ -405,22 +336,20 @@ for same Page */
 
 .track {
   position: relative;
-  height: 400px;
-  width: 500px;
   display: block;
+  width: 100%;
+  max-width: 500px;
+  min-height: 320px;
   background: var(--card);
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(99, 102, 241, 0.2);
   transform-style: preserve-3d;
-  perspective: 1000px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
-  position: relative;
-  overflow: hidden;
+  margin: 0 auto;
 }
 
 .track::before {
@@ -602,10 +531,8 @@ for same Page */
   border-radius: 12px;
   background: var(--card);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(99, 102, 241, 0.2);
   transform-style: preserve-3d;
-  perspective: 1000px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   position: relative;
 }
@@ -631,17 +558,13 @@ for same Page */
   padding: 12px;
   border-radius: 10px;
   background: rgba(30, 30, 46, 0.6);
-  /* Spaces between lists top and under */
   margin-bottom: 10px;
   display: flex;
-
-  /* to make road map word in left */
   justify-content: space-between;
   align-items: center;
   transition: transform 0.3s ease;
 }
 
-/* Cyber page specific enhancements */
 .cyber-container {
   position: relative;
 
@@ -657,10 +580,8 @@ for same Page */
   opacity: 0;
   transition: all 0.4s ease;
   pointer-events: none;
-  z-index: 1;
 }
 
-/* Hover on border */
 .blue-hover {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.2));
   box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
@@ -673,15 +594,11 @@ for same Page */
   border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.blue-panel:hover .blue-hover {
+.blue-panel:hover .blue-hover ,.red-panel:hover .red-hover{
   opacity: 1;
   transform: scale(1.02);
 }
 
-.red-panel:hover .red-hover {
-  opacity: 1;
-  transform: scale(1.02);
-}
 
 .blue-panel:hover {
   transform: translateY(-8px) scale(1.02);
@@ -707,42 +624,29 @@ for same Page */
 }
 
 
-/* Panel header glow effect */
 .panel h2 {
   /* for line under */
   position: relative;
-
-  /* على قد الكلمة بس */
   display: inline-block;
 }
-/* For word Blue */
-.blue-panel h2::after {
+
+/* word Blue and Red */
+.blue-panel h2::after , .red-panel h2::after{
   content: '';
   position: absolute;
   bottom: -5px;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--blue);
-  transition: width 0.3s ease;
-}
-/* for word Red */
-.red-panel h2::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--red);
   transition: width 0.3s ease;
 }
 
 .blue-panel:hover h2::after {
+  background: var(--blue);
   width: 100%;
 }
-
 .red-panel:hover h2::after {
+  background: var(--red);
   width: 100%;
 }
 
@@ -752,7 +656,6 @@ for same Page */
   margin: 40px auto;
   padding: 40px 50px;
   width: 100%;
-  max-width: 1000px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(6px);
   border-radius: 18px;
@@ -798,7 +701,6 @@ for same Page */
   background: rgba(255, 255, 255, 0.25);
   height: 14px;
   border-radius: 20px;
-  overflow: hidden;
   margin-bottom: 8px;
 }
 
@@ -817,14 +719,6 @@ for same Page */
 }
 
 /* Special progress bars for Blue/Red Team */
-
-/* .blue-progress {
-  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
-} */
-
-.red-progress {
-  background: linear-gradient(90deg, #ef4444, #dc2626);
-}
 
 .header-section {
   padding: 30px 50px;
@@ -966,7 +860,6 @@ for same Page */
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-/* Track-specific step button colors */
 .data .step-btn {
   background: var(--green);
 }
@@ -985,7 +878,6 @@ for same Page */
   box-shadow: 0 4px 12px rgba(168, 116, 255, 0.3);
 }
 
-/* Flutter Page Specific Styles */
 
 .flutter-page .step-btn {
   background: var(--teal);
@@ -996,12 +888,33 @@ for same Page */
   box-shadow: 0 4px 12px rgba(45, 212, 191, 0.3);
 }
 
-/* Update the step hover for flutter */
 .flutter-page .step:hover {
   border-left-color: var(--teal);
 }
+/* --------------------------------------------------- */
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .tracks {
+    gap: 18px;
+  }
+  .track {
+    max-width: 100%;
+    min-height: 300px;
+  }
+  .track-body {
+    font-size: 13px;
+    padding: 10px;
+  }
 
-/* Teal colored progress bar for flutter */
-.teal-progress {
-  background: linear-gradient(90deg, #14b8a6, #0ea5e9);
+}
+
+@media (max-width: 720px) {
+  .nav {
+    gap: 8px;
+  }
+  .nav a {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
 }
